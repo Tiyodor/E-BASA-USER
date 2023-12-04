@@ -10,19 +10,19 @@ const Sidenav = () => {
   return (
     <div className="sidenav">
        <Link to="/" onClick={() => handleMenuClick('#')}>
-        <img src="/assets/imgs/menubt.png" alt="menu" id="menubt-image" />
+        <img src="/assets/imgs/menubt.png" id="menubt-image" />
       </Link>
 
       <Link to="/home" onClick={() => handleMenuClick('home')}>
-        <img src="/assets/imgs/homebt.png" alt="homebt" id="homebt-image" />
+        <img src="/assets/imgs/homebt.png" id="homebt-image" />
       </Link>
 
       <a className="active" href="#sound">
-        <img src="/assets/imgs/soundbt.png" alt="soundbt" id="soundbt-image" />
+        <img src="/assets/imgs/soundbt.png" id="soundbt-image" />
       </a>
 
       <a className="active" href="#setting">
-        <img src="/assets/imgs/settingbt.png" alt="settingbt" id="settingbt-image" />
+        <img src="/assets/imgs/settingbt.png" id="settingbt-image" />
       </a>
     </div>
   );
