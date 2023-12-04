@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('G:/Project/React/e-basa/public/assets/imgs/Landingbk.png');
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+
+footer {
+  margin: 0;
+  padding: 0;
+  background-image: url('G:/Project/React/e-basa/public/assets/imgs/footer.png');
+  background-size: cover;
+  background-repeat: no-repeat; 
+  align-items: center;
+}
+
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 20px; 
+}
+
+.centered-image {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .topnav {
+  overflow: hidden;
+  position: fixed;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.user-search-container {
+  display: flex;
+  align-items: center;
+  margin-left: 16px; /* Adjust the margin to align with other buttons */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  background-color: #CFF9FF;
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  height: 45px;
+}
+
+#search-button {
+  width: 65px;
+  height: 65px;
+  cursor: pointer;
+}
+
+
+
+#trophy-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/trophy-hover.png');
+}
+
+#puntos-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/puntos-hover.png');
+}
+
+#kwento-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/kwento-hover.png');
+}
+
+#menubt-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/menuhv.png');
+}
+
+#homebt-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/homehv.png');
+}
+
+#soundbt-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/soundhv.png');
+}
+
+#settingbt-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/settinghv.png');
+}
+
+
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 100px;
+  /* margin-bottom:70px; */ 
+}
+
+.letra-button {
+  background-color: #FFD440;
+  border-radius: 25px;
+  color: #fff;
+  width: 230px;
+  height: 50px;
+  text-decoration: none;
+  text-align: center; /* Center the text */
+  line-height: 50px;
+  display: inline-block;
+}
+
+.letra-button:hover {
+  background-color: #FFDD69;
+}
+
+.numero-button {
+  background-color: #756AAF;
+  border-radius: 25px;
+  color: #fff;
+  width: 230px;
+  height: 50px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center; /* Center the text */
+  line-height: 50px;
+}
+
+.numero-button:hover {
+  background-color: #5E45DF;
+}
+
+.hayop-button {
+  background-color: #FF7A69;
+  border-radius: 25px;
+  color: #fff;
+  width: 230px;
+  height: 50px;
+  text-decoration: none;
+  text-align: center; /* Center the text */
+  line-height: 50px;
+  display: inline-block;
+}
+
+.hayop-button:hover {
+  background-color: #FB6C59;
+}
+
+.palaka-button {
+  background-color: #A1E67D;
+  border-radius: 25px;
+  color: #fff;
+  width: 230px;
+  height: 50px;
+  text-decoration: none;
+  text-align: center; /* Center the text */
+  line-height: 50px;
+  display: inline-block; 
+  margin-left: 100px;
+}
+
+.palaka-button:hover {
+  background-color: #87FF49;
+}
+
+.langgam-button {
+  background-color: #FB6C59;
+  border-radius: 25px;
+  color: #fff;
+  width: 230px;
+  height: 50px;
+  text-decoration: none;
+  text-align: center; /* Center the text */
+  line-height: 50px;
+  display: inline-block; 
+  margin-left: 100px;
+}
+
+.langgam-button:hover {
+  background-color: #FF3E3E;
+}
+
+.daga-button {
+  background-color: #FAC40E;
+  border-radius: 25px;
+  color: #fff;
+  width: 230px;
+  height: 50px;
+  text-decoration: none;
+  text-align: center; /* Center the text */
+  line-height: 50px;
+  display: inline-block; 
+  margin-left: 100px;
+}
+
+.daga-button:hover {
+  background-color: #ECB600;
+}
+
+.box1 {
+  width: 400px;
+  height:350px;
+  margin: -20px;
+  border: none;
+  text-align: center;
+}
+
+.box1 img {
+  padding-top:50px;
+  width: 30px;
+  height: auto;
+}
+
+.sidenav {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px; /* Adjust the width as needed */
+  background: rgba(255, 255, 255, 0.5); /* 50% transparent white background */
+  overflow-x: hidden;
+  padding-top: 10px;
+  margin-right: 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.sidenav a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #333; /* Text color */
+  display: block;
+  margin: 10px 0;
+}
+
+#menubt-image,
+#homebt-image,
+#soundbt-image,
+#settingbt-image {
+  width: 75px; /* Adjust image size as needed */
+  height: 75px; /* Adjust image size as needed */
+}
+
+.sidenav a:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+.container-palaka {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            background-color: white;
+            width: 1004px;
+            height: 250px;
+            margin: 0 auto; /* Center horizontally within the body */
+        }
+
+        .palaka {
+            flex: 1;
+           padding-right: 20px;
+           padding-top: 3px;
+        }
+
+        .text-palaka {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .container-langgam {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            background-color: white;
+            width: 1004px;
+            height: 250px;
+            margin: 0 auto; /* Center horizontally within the body */
+        }
+
+        .langgam {
+            flex: 1;
+           padding-left: 20px;
+           padding-top: 3px;
+        }
+
+        .text-langgam {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .container-daga {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            background-color: white;
+            width: 1004px;
+            height: 250px;
+            margin: 0 auto; /* Center horizontally within the body */
+        }
+
+        .daga {
+            flex: 1;
+           padding-right: 20px;
+           padding-top: 3px;
+        }
+
+        .text-daga {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .about {
+  color: #7FD8A5; /* Green color for "ABOUT" */
+}
+
+.us {
+  color: white; /* White color for "US" */
+}
+
+.useful {
+  color: #FF3E3E; /* Red color for "USEFUL" */
+}
+
+.links {
+  color: white; /* White color for "LINKS" */
+}
+
+
+</style>
+
+<div class="topnav">
+  <a class="active" href="#home">
+    <img src="G:/Project/React/e-basa/public/assets/imgs/nav-logo.png" alt="Home">
+  </a>
+
+  <a class="active" href="#trophy">
+    <img src="G:/Project/React/e-basa/public/assets/imgs/trophy.png" alt="trophy" id="trophy-image">
+  </a>
+
+  <a class="active" href="#puntos">
+    <img src="G:/Project/React/e-basa/public/assets/imgs/puntos.png" alt="puntos" id="puntos-image">
+  </a>
+
+  <div class="user-search-container">
+    <div class="search-bar">
+      <input type="text" id="search-input" />
+      <img src="G:/Project/React/e-basa/public/assets/imgs/search-logo.png" id="search-button" alt="Search" />
+    </div>
+
+    <a class="active" href="#user">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/user-icon.png" alt="user-icon">
+    </a>
+  </div>
+</div> 
+
+</head>
+<body>
+    
+ 
+  
+  
+  <div class="sidenav">  
+
+      <a class="active" href="#menu">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/menubt.png" alt="menu" id="menubt-image">
+      </a>
+
+      <a class="active" href="#home">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/homebt.png" alt="homebt" id="homebt-image">
+      </a> 
+
+      <a class="active" href="#sound">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/soundbt.png" alt="soundbt" id="soundbt-image">
+      </a>
+
+      <a class="active" href="#setting">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/settingbt.png" alt="settingbt" id="settingbt-image">
+      </a> 
+      
+      
+
+  </div>
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="section" data-aos="fade-up">
+    
+    <div class="box1" data-aos="zoom-in" data-aos-delay="100">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/letralogo.png" style="height: 300px; width: 250px;">
+      <a href="#letra" class="button letra-button">Mga Letra</a>
+    </div>
+
+    <div class="box1" data-aos="zoom-in" data-aos-delay="100">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/numerologo.png" style="height: 300px; width: 250px;">
+      <a href="#numero" class="button numero-button">Mga Numero</a>
+    </div>
+
+    <div class="box1" data-aos="zoom-in" data-aos-delay="100">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/hayoplogo.png" style="height: 300px; width: 250px;">
+      <a href="#hayop" class="button hayop-button">Mga Hayop</a>
+    </div>
+  
+</div>
+
+<div class="section">
+<a class="active" href="#kwento">
+  <img src="G:/Project/React/e-basa/public/assets/imgs/kwento.png" alt="kwento" id="kwento-image">
+</a> 
+</div>
+
+  <br>
+  <br>
+
+  <div class="container-palaka">
+    <div class="palaka">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/palaka.png" alt="palaka">
+    </div>
+    <div class="text-palaka">
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <a href="#palaka" class="button palaka-button">Pakingan</a>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="container-langgam">
+ 
+  <div class="text-langgam">
+      <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      <a href="#langgam" class="button langgam-button">Pakingan</a>
+  </div>
+  <div class="langgam">
+    <img src="G:/Project/React/e-basa/public/assets/imgs/langgam.png" alt="langgam">
+</div>
+</div>
+
+<br>
+<br>
+
+  <div class="container-daga">
+    <div class="daga">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/daga.png" alt="daga">
+    </div>
+    <div class="text-daga">
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <a href="#daga" class="button daga-button">Pakingan</a>
+    </div>
+</div>
+</body>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer>
+  <div class="footer-content">
+  <img src="G:/Project/React/e-basa/public/assets/imgs/footerlogo.png" alt="footerlogo">
+  <h1><span class="about">ABOUT</span> <span class="us">US</span></h1>
+  <h1><span class="useful">USEFUL</span> <span class="links">LINKS</span></h1>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</footer>
+</html>
+

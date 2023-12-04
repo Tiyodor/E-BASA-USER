@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.cdnfonts.com/css/happy-school" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('G:/Project/React/e-basa/public/assets/imgs/Landingbk.png');
+  background-size: cover;
+  background-repeat: no-repeat; 
+  font-family: 'Happy School', sans-serif;
+}
+
+footer {
+  margin: 0;
+  padding: 0;
+  background-image: url('G:/Project/React/e-basa/public/assets/imgs/footer.png');
+  background-size: cover;
+  background-repeat: no-repeat; 
+  align-items: center;
+}
+
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 20px; 
+}
+
+.centered-image {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .topnav {
+  overflow: hidden;
+  position: fixed;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.user-search-container {
+  display: flex;
+  align-items: center;
+  margin-left: 16px; /* Adjust the margin to align with other buttons */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  background-color: #CFF9FF;
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  height: 45px;
+}
+
+#search-button {
+  width: 65px;
+  height: 65px;
+  cursor: pointer;
+}
+
+
+
+#trophy-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/trophy-hover.png');
+}
+
+#puntos-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/puntos-hover.png');
+}
+
+#kwento-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/kwento-hover.png');
+}
+
+#menubt-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/menuhv.png');
+}
+
+#homebt-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/homehv.png');
+}
+
+#soundbt-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/soundhv.png');
+}
+
+#settingbt-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/settinghv.png');
+}
+
+
+
+
+.sidenav {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px; /* Adjust the width as needed */
+  background: rgba(255, 255, 255, 0.5); /* 50% transparent white background */
+  overflow-x: hidden;
+  padding-top: 10px;
+  margin-right: 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.sidenav a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #333; /* Text color */
+  display: block;
+  margin: 10px 0;
+}
+
+#menubt-image,
+#homebt-image,
+#soundbt-image,
+#settingbt-image {
+  width: 75px; /* Adjust image size as needed */
+  height: 75px; /* Adjust image size as needed */
+}
+
+.sidenav a:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+/* css for ranks */
+.Student-rank {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Vertically align items in the center */
+  justify-content: space-between; /* Space between items horizontally */
+  position: relative;
+  padding-right: 65px;
+}
+
+.Rank-num {
+  position: absolute; /* Position it absolutely within the relative parent */
+  bottom: 0; /* Align to the top */
+  left: 50px;
+  z-index: 1;
+  background-color: #FFD700;
+  border-radius: 50px;
+  width: 45px;
+  height: 40px;
+  color: white;
+  display: flex; /* Use flexbox to align items inside student-info */
+  align-items: center; /* Vertically align items in the center */
+  justify-content: center;
+}
+
+.student-info {
+  font-size: 24px;
+  background-color: #FFD700;
+  border-radius: 50px;
+  width: 330px;
+  height: 50px;
+  color: white;
+  display: flex; /* Use flexbox to align items inside student-info */
+  align-items: center; /* Vertically align items in the center */
+  justify-content: center; /* Horizontally align items in the center */
+}
+
+.Student-name {
+ 
+  margin-right: 100px; /* Add right margin to create space */
+}
+
+
+.Rank-container{
+  margin: 0 auto;
+  display: flex;
+  border-radius: 25px;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1000px;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.5);
+  background-size: 100% 10px, 100% 10px;
+  background-repeat: no-repeat;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+#profile-photo {
+  position: relative;
+  left: 70px;
+}
+
+#rank-small {
+  width: 40px;
+  height: 35px;
+  position: absolute; /* Position it absolutely within the relative parent */
+  bottom: 0; /* Align to the bottom */
+  left: 125px; /* Align to the right */
+}
+
+#trophy-small{
+  
+  position: absolute;
+  left: 380px;
+}
+
+.Rank-left {
+
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items vertically */
+}
+
+.Rank-right{
+  background-color: #B12FC2;
+  flex-direction: column; /* Stack elements vertically */
+  padding-top: 30px;
+  border-radius: 50px;
+  margin-right: 20px;
+}
+#rank-big{
+  position: relative;
+  left: 50px;
+  width: 400px;
+}
+</style>
+
+<div class="topnav">
+  <a class="active" href="#home">
+    <img src="G:/Project/React/e-basa/public/assets/imgs/nav-logo.png" alt="Home">
+  </a>
+
+  <a class="active" href="#trophy">
+    <img src="G:/Project/React/e-basa/public/assets/imgs/trophy.png" alt="trophy" id="trophy-image">
+  </a>
+
+  <a class="active" href="#puntos">
+    <img src="G:/Project/React/e-basa/public/assets/imgs/puntos.png" alt="puntos" id="puntos-image">
+  </a>
+
+  <div class="user-search-container">
+    <div class="search-bar">
+      <input type="text" id="search-input" />
+      <img src="G:/Project/React/e-basa/public/assets/imgs/search-logo.png" id="search-button" alt="Search" />
+    </div>
+
+    <a class="active" href="#user">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/user-icon.png" alt="user-icon">
+    </a>
+  </div>
+</div> 
+
+</head>
+<body>
+    
+ 
+  
+  
+  <div class="sidenav">  
+
+      <a class="active" href="#menu">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/menubt.png" alt="menu" id="menubt-image">
+      </a>
+
+      <a class="active" href="#home">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/homebt.png" alt="homebt" id="homebt-image">
+      </a> 
+
+      <a class="active" href="#sound">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/soundbt.png" alt="soundbt" id="soundbt-image">
+      </a>
+
+      <a class="active" href="#setting">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/settingbt.png" alt="settingbt" id="settingbt-image">
+      </a> 
+  </div>
+
+  <div class="Rank-container">
+    <div class="Rank-left">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/rank-sample.png" id="rank-big">
+      
+      <div class="Student-rank">
+      <a class="Rank-num">1</a>
+      <img src="G:/Project/React/e-basa/public/assets/imgs/girl.png" id="profile-photo">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/rank-sample.png" id="rank-small">
+      <div class="student-info">
+      <a class="Student-name">Maria</a>
+      <a class="Score">20</a>
+     </div>
+      <img src="G:/Project/React/e-basa/public/assets/imgs/trophy-small.png" id="trophy-small">
+     </div>
+
+
+     <div class="Student-rank">
+      <a class="Rank-num">2</a>
+      <img src="G:/Project/React/e-basa/public/assets/imgs/boy1.png" id="profile-photo">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/rank-sample.png" id="rank-small">
+      <div class="student-info">
+      <a class="Student-name">Miguel</a>
+      <a class="Score">19</a>
+      </div>
+      <img src="G:/Project/React/e-basa/public/assets/imgs/trophy-small.png" id="trophy-small">
+      </div>
+
+     <div class="Student-rank">
+      <a class="Rank-num">3</a>
+      <img src="G:/Project/React/e-basa/public/assets/imgs/boy2.png" id="profile-photo">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/rank-sample.png" id="rank-small">
+      <div class="student-info">
+      <a class="Student-name">Raul</a>
+      <a class="Score">17</a>
+       </div>
+      <img src="G:/Project/React/e-basa/public/assets/imgs/trophy-small.png" id="trophy-small">
+     </div>
+
+    </div>
+    <div class="Rank-right">
+
+      <div class="Student-rank">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/girl.png" id="profile-photo">
+       <img src="G:/Project/React/e-basa/public/assets/imgs/rank-sample.png" id="rank-small">
+       <div class="student-info">
+       <a class="Score">20</a>
+      </div>
+       <img src="G:/Project/React/e-basa/public/assets/imgs/trophy-small.png" id="trophy-small">
+      </div>
+
+      <div class="Student-rank">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/boy1.png" id="profile-photo">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/rank-sample.png" id="rank-small">
+        <div class="student-info">
+        <a class="Score">19</a>
+        </div>
+        <img src="G:/Project/React/e-basa/public/assets/imgs/trophy-small.png" id="trophy-small">
+        </div>
+  
+       <div class="Student-rank">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/boy2.png" id="profile-photo">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/rank-sample.png" id="rank-small">
+        <div class="student-info">
+        <a class="Score">17</a>
+         </div>
+        <img src="G:/Project/React/e-basa/public/assets/imgs/trophy-small.png" id="trophy-small">
+       </div>
+       
+       <div class="Student-rank">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/boy1.png" id="profile-photo">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/rank-sample.png" id="rank-small">
+        <div class="student-info">
+        <a class="Score">19</a>
+        </div>
+        <img src="G:/Project/React/e-basa/public/assets/imgs/trophy-small.png" id="trophy-small">
+        </div>
+  
+       <div class="Student-rank">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/boy2.png" id="profile-photo">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/rank-sample.png" id="rank-small">
+        <div class="student-info">
+        <a class="Score">17</a>
+         </div>
+        <img src="G:/Project/React/e-basa/public/assets/imgs/trophy-small.png" id="trophy-small">
+       </div>
+
+       <div class="Student-rank">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/boy1.png" id="profile-photo">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/rank-sample.png" id="rank-small">
+        <div class="student-info">
+        <a class="Score">19</a>
+        </div>
+        <img src="G:/Project/React/e-basa/public/assets/imgs/trophy-small.png" id="trophy-small">
+        </div>
+  
+       <div class="Student-rank">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/boy2.png" id="profile-photo">
+        <img src="G:/Project/React/e-basa/public/assets/imgs/rank-sample.png" id="rank-small">
+        <div class="student-info">
+        <a class="Score">17</a>
+         </div>
+        <img src="G:/Project/React/e-basa/public/assets/imgs/trophy-small.png" id="trophy-small">
+       </div>
+
+       
+    </div>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+</body>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer>
+  <div class="footer-content">
+  <img src="G:/Project/React/e-basa/public/assets/imgs/footerlogo.png" alt="footerlogo">
+  <h1><span class="about">ABOUT</span> <span class="us">US</span></h1>
+  <h1><span class="useful">USEFUL</span> <span class="links">LINKS</span></h1>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</footer>
+</html>
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    .container {
+      width: 1250px;
+      margin: 0 auto;
+      background-color: transparent;
+      border-radius: 50px;
+      padding: 20px;
+      border: 2px solid #333; /* Adding a border for visibility */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .column {
+      flex: 1 1 48%; /* Adjusted the flex properties */
+      margin-bottom: 20px;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .row label {
+      width: 150px;
+      text-align: right;
+      margin-right: 10px;
+    }
+    /* Adjusting input widths */
+    #school, #firstName, #lastName {
+      width: calc(100% - 160px);
+    }
+    #username, #password, #confirmPassword {
+      width: calc(100% - 160px);
+    }
+    #middleInitial, #age, #gender {
+      width: calc(100% - 160px);
+    }
+    select {
+      width: calc(100% - 160px);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+
+  <form>
+    <div class="container">
+      <div class="column">
+        <!-- First Column -->
+        <div class="row">
+          <label for="school">School:</label>
+          <input type="text" id="school" name="school" placeholder="School">
+        </div>
+
+        <div class="row">
+          <label for="firstName">Name:</label>
+          <input type="text" id="firstName" name="firstName" placeholder="Name">
+        </div>
+
+        <div class="row">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+        </div>
+
+        <div class="row">
+          <label for="middleInitial">Middle Initials:</label>
+          <input type="text" id="middleInitial" name="middleInitial" placeholder="Middle Initials">
+        </div>
+      </div>
+
+      <div class="column">
+        <!-- Second Column -->
+        <div class="row">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Username">
+        </div>
+
+        <div class="row">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Password">
+        </div>
+
+        <div class="row">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+        </div>
+
+        <div class="row">
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" placeholder="Age">
+        </div>
+      </div>
+
+      <div class="column">
+        <!-- Additional Row -->
+        <div class="row">
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender" placeholder="Gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.cdnfonts.com/css/happy-school" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  height: 425px;
+  background-image: url('G:/Project/React/e-basa/public/assets/imgs/loginbg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Happy School', sans-serif;
+
+}
+
+.centered-image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.clouds {
+    height: 360px;
+    position: fixed;
+    overflow: hidden;
+}
+
+.clouds img {
+    width: 200%;
+    animation: slidein 50s linear infinite;
+    background-repeat: repeat;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+button {
+    width: 350px;
+    height: 50px;
+    margin: 10px 0;
+    background-color: #12BBD8;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-top: 150px;
+}
+
+
+</style>
+</head>
+<body>
+  <div class="clouds">
+    <img src="G:/Project/React/e-basa/public/assets/imgs/clouds1.png" class="clouds-img">
+  </div>
+  
+<img src="G:/Project/React/e-basa/public/assets/imgs/nav-logo.png" alt="Centered Image" class="centered-image">
+
+<div class="button-container">
+    <a href="G:/Project/React/e-basa/src/pages/register.html">
+    <button type="button"> CREATE AN ACCOUNT </button>
+    </a>
+    <a href="G:/Project/React/e-basa/src/pages/signin.html">
+    <button type="button"> LOG IN </button>
+    </a>
+</div>
+
+</body>
+</html>

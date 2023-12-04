@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('G:/Project/React/e-basa/public/assets/imgs/ingame/background.png');
+}
+
+#menubt-image,
+#homebt-image,
+#soundbt-image,
+#settingbt-image {
+  width: 75px; /* Adjust image size as needed */
+  height: 75px; /* Adjust image size as needed */
+}
+
+#home-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/ingame/homehv.png');
+}
+
+#music-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/ingame/musichv.png');
+}
+
+#settings-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/ingame/settingshv.png');
+}
+
+#menu-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/ingame/menuhv.png');
+}
+
+#prev-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/ingame/prevhv.png');
+}
+
+#pause-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/ingame/pausehv.png');
+}
+
+#next-image:hover {
+  content: url('G:/Project/React/e-basa/public/assets/imgs/ingame/nexthv.png');
+}
+
+.botnav {
+  position: fixed;
+  bottom: 0;
+  left: 50%; /* Position it at the horizontal center */
+  transform: translateX(-50%); /* Center it horizontally */
+  width: 90%; /* Adjust the width as needed */
+  background: rgba(255, 255, 255, 0.5); /* 50% transparent white background */
+  overflow-x: hidden;
+  margin-bottom: 10px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around; /* To evenly space navigation items */
+  border-radius: 35px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.botnav-bt {
+  display: block;
+  margin: 10px 0;
+}
+
+.guidelines img{
+  display: block;
+  width: 850px; /* You can specify any width you want */
+  height: auto; /* This maintains the aspect ratio */
+  margin: 0 auto;
+}
+
+</style>
+</head>
+<body>
+  <div class="botnav">  
+    <div class="botnav-bt" href="#home">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/ingame/home.png" alt="home" id="home-image">
+    </div>
+    <div class="botnav-bt" href="#home">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/ingame/music.png" alt="music" id="music-image">
+    </div> 
+    <div class="botnav-bt" href="#sound">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/ingame/settings.png" alt="settings" id="settings-image">
+    </div>
+    <div class="botnav-bt" href="#setting">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/ingame/menu.png" alt="menu" id="menu-image">
+    </div> 
+    <div class="botnav-bt" href="#home">
+      <a href="G:/Project/React/e-basa/src/pages/htmls/gamepage.html">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/ingame/prev.png" alt="prev" id="prev-image">
+      </a>
+    </div> 
+    <div class="botnav-bt" href="#sound">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/ingame/pause.png" alt="pause" id="pause-image">
+    </div>
+    <div class="botnav-bt" href="#setting">
+      <a href="G:/Project/React/e-basa/src/pages/htmls/gamepage3.html">
+      <img src="G:/Project/React/e-basa/public/assets/imgs/ingame/next.png" alt="next" id="next-image">
+      </a>
+    </div> 
+  </div>
+
+  <div class="guidelines">
+    <img src="G:/Project/React/e-basa/public/assets/imgs/ingame/2.png">
+  </div>
+</body>
+</html>

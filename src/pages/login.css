@@ -1,0 +1,167 @@
+.loginbg {
+  top: 50;
+  height: 100vh;
+  background-color: #13DFFE;
+  background-position: center center;
+  background-size: 'contain';
+  
+}
+
+
+  .centered-image {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  
+  .clouds {
+        height: 360px;
+        position: absolute;
+        overflow: hidden;
+      }
+  
+      .clouds img {
+        width: 200%; /* Double the width to cover the entire body width */
+        animation: slidein 50s linear infinite; /* Adjust the duration as needed */
+        background-repeat: repeat;
+        
+      }
+  
+      @keyframes slidein {
+        from {
+          transform: translateX(0%);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+  
+      button {
+      width: 350px;
+      height: 50px;
+      margin: 10px 0;
+      background-color: #12BBD8;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-top: 30px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      font-family: 'Happy School', sans-serif;
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 3px;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-top: 150px;
+    left: 37%;
+    top: 5%;
+}
+
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%; /* set top to 50% */
+  left: 50%; /* set left to 50% */
+  transform: translate(-50%, -50%); /* use translate to center both horizontally and vertically */
+}
+
+
+
+input {
+  width: calc(100% - 20px);
+  height: 50px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  color: #000000;
+  border-radius: 50px;
+  font-family: 'Happy School', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 3px;
+  border-color: transparent;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%; /* set top to 50% */
+  left: 50%; /* set left to 50% */
+  transform: translate(-50%, -50%); /* use translate to center both horizontally and vertically */
+}
+
+
+.reg-container {
+  width: 1250px;
+  height: 400px;
+  display: flex;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+}
+
+.Lcontainer input,
+  .Rcontainer input,
+  .Bcontainer input {
+    padding: 30px;
+    margin-top: 20px;
+  box-sizing: border-box;
+  margin-left: 15px;
+
+  }
+
+.Lcontainer {
+flex: 0 0 60%;
+padding: 20px;
+}
+
+.Rcontainer {
+flex: 0 0 30%;
+padding: 20px;
+}
+
+.Bcontainer {
+  display: flex;
+  position: absolute;
+  padding: 20px;
+  bottom: 135px; /* Adjust this value to change the distance from L/R containers */
+
+  justify-content: space-between;
+}
+
+.Bcontainer input{
+  flex: 0 0 43.7%;
+  
+}
+
+.loginbot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-image: url('/public/assets/imgs/loginbot.png'); /* Replace with your image URL */
+  background-size: contain; /* Adjust the size of the background */
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  /* Add other styles for your loginbot */
+}
+
+.guidepage-bg{
+  position: fixed;
+  width: 100%;
+  background-image: url('/public/assets/imgs/guidebg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}

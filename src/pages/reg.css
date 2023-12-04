@@ -1,0 +1,106 @@
+.loginbg {
+    top: 50;
+    height: 100vh;
+    background-image: url('/public/assets/imgs/loginbg.png');
+    background-position: center center;
+    background-size: 'contain';
+  }
+  
+.centered-image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.clouds {
+    height: 360px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.clouds img {
+    width: 200%; /* Double the width to cover the entire body width */
+    animation: slidein 50s linear infinite; /* Adjust the duration as needed */
+    background-repeat: repeat;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+button {
+    width: 350px;
+    height: 50px;
+    margin: 10px 0;
+    background-color: #12BBD8;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+input {
+    width: calc(100% - 20px);
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    color: #000000;
+    border-radius: 50px;
+    border-color: transparent;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%; /* set top to 50% */
+    left: 50%; /* set left to 50% */
+    transform: translate(-50%, -50%); /* use translate to center both horizontally and vertically */
+}
+
+
+.reg-container {
+    width: 1250px;
+    height: 400px;
+    display: flex;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+
+}
+
+
+.reg-container {
+    width: 1250px;
+    height: 400px;
+    display: flex;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+  
+  }
+  
+  .Lcontainer,
+    .Rcontainer {
+      padding: 20px;
+    box-sizing: border-box;
+    }
+  
+  .Lcontainer {
+  flex: 0 0 60%;
+  
+  }
+  
+  .Rcontainer {
+  flex: 0 0 40%;
+  
+  }
