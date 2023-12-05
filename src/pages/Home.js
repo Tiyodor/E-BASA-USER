@@ -23,7 +23,9 @@ export default function Home() {
         </div>
 
         <img src='/assets/imgs/ingame/next.png' id='next-image'/>  
+
       </div>
+        <img src='/assets/imgs/ingame/levels.png' id='level-image' />
       </>
       );
 }

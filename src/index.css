@@ -74,10 +74,13 @@ footer {
 
 #search-button {
   width: 65px;
+  padding-top: 25px;
   height: 65px;
   cursor: pointer;
+  position: relative;
+  left: -20%; /* To center initially */
+  transform: translateX(50%);
 }
-
 
 
 #trophy-image:hover {
@@ -114,13 +117,13 @@ footer {
 .sidenav {
   position: fixed;
   right: 0;
-  top: 50%;
+  top: 37%;
   transform: translateY(-50%);
   width: 100px; /* Adjust the width as needed */
   background: rgba(255, 255, 255, 0.5); /* 50% transparent white background */
   overflow-x: hidden;
   padding-top: 10px;
-  margin-right: 10px;
+  margin-right: 40px;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -333,7 +336,7 @@ footer {
   width: 150px;
   height: 60px;
   margin-top: 20px;
-  margin-left: 590px;
+  margin-left: 790px;
   margin-bottom: 30px;
   background-color: #1251d8;
   display: flex; /* Make the container a flex container */
@@ -371,8 +374,8 @@ footer {
 
 
 .aralin, .pagsusulit {
-  width: 250px;
-  height: 350px;
+  width: 400px;
+  height: 600px;
   margin: 20px;
   /* Add any additional styling for the container */
 }
@@ -389,10 +392,25 @@ footer {
 }
 
 .gamebt{
-  height: 40px;
-  width: 150px;
-   position: fixed;
+  height: 70px;
+  width: 250px;
+  position: fixed;
   top: 14%;
-  margin-left: 145px;
+  margin-left: 220px;
+  transform: translate(-50%, -50%);
+}
+
+#level-image {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, -50%);
+}
+
+#whitebar{
+  position: absolute;
+  top: 2%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }

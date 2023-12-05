@@ -10,7 +10,10 @@ const Navbar = () => {
   };
 
   return (
+    <>     <img src='/assets/imgs/whitebar.png' id='whitebar'/>
+
     <div className="topnav">
+     
     <Link to="/home" onClick={() => handleMenuClick('home')}>
   <img src="/assets/imgs/nav-logo.png" alt="Home" />
 </Link>
@@ -32,8 +35,9 @@ const Navbar = () => {
         <Link to="/profile" onClick={() => handleMenuClick('profile')}>
           <img src="/assets/imgs/user-icon.png" alt="user-icon" />
      </Link>
- 
     </div>
+    
+    </>
   );
 }
 

@@ -64,7 +64,7 @@ const Login = () => {
         <input
           type="text"
           id="username"
-          placeholder="Username"
+          placeholder="Numero ng ID"
           name="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -80,7 +80,7 @@ const Login = () => {
           required
         />
         <button type="button" onClick={handleLogin}>
-          SIGN IN
+          MAG LOG IN
         </button>
       </div>
       </div>
