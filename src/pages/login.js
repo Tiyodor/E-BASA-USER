@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import './login.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -44,6 +45,21 @@ const Login = () => {
 
   return (
     <>
+     <div className='loginbot'>
+      <img src={process.env.PUBLIC_URL + '/assets/imgs/loginbot.png'}  />
+    </div>
+    <div className='loginbg'>
+      <div className="clouds">
+        <img src={process.env.PUBLIC_URL + '/assets/imgs/clouds1.png'} className="clouds-img" alt="Clouds" />
+      </div>
+
+      
+        <img
+          src={process.env.PUBLIC_URL + '/assets/imgs/nav-logo.png'}
+          alt="Centered Image"
+          className="centered-image"
+        />
+    
       <div className="login-container">
         <input
           type="text"
@@ -66,6 +82,7 @@ const Login = () => {
         <button type="button" onClick={handleLogin}>
           SIGN IN
         </button>
+      </div>
       </div>
     </>
   );
