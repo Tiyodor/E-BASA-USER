@@ -414,3 +414,78 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.panuto {
+  background-image: url('/public/assets/imgs/ingame/gamebg.png');
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%; /* Adjusted to fit the viewport */
+  background-position: center;
+  background-size: cover; /* Removed quotes */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mabuhay-image {
+  height: 630px;
+  width: 1150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#balik-image {
+  height: 320px;
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 200px; /* Adjusted position for the "balik" image on the left */
+  transform: translate(-50%, -50%);
+}
+
+#balik-image:hover {
+  content: url('/public/assets/imgs/ingame/balikhv.png');
+}
+
+#sunod-image {
+  height: 320px;
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  right: 105px; /* Adjusted position for the "sunod" image on the right */
+  transform: translate(-50%, -50%);
+}
+
+#sunod-image:hover {
+  content: url('/public/assets/imgs/ingame/sunodhv.png');
+}
+
+.intro {
+  background-image: url('/public/assets/imgs/ingame/introbg.png');
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%; /* Adjusted to fit the viewport */
+  background-position: center;
+  background-size: cover; /* Removed quotes */
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+}
+
+#susunod-image {
+  height: 100px;
+  width: 438px;
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#susunod-image:hover {
+  content: url('/public/assets/imgs/ingame/susunodhv.png');
+}
