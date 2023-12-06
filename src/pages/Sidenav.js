@@ -9,7 +9,7 @@ const Sidenav = () => {
   };
   return (
     <div className="sidenav">
-       <Link to="/" onClick={() => handleMenuClick('#')}>
+       <Link to="/quiz" onClick={() => handleMenuClick('quiz')}>
         <img src="/assets/imgs/menubt.png" id="menubt-image" />
       </Link>
 
