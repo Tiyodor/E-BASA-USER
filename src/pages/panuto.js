@@ -16,7 +16,7 @@ const Panuto = () => {
         <div class="">
             <img src="/assets/imgs/ingame/panuto.png" id="mabuhay-image" />
         </div>
-        <Link to="/Ranks" onClick={() => handleMenuClick('Ranks')}>
+        <Link to="/quiz" onClick={() => handleMenuClick('Quiz')}>
         <img src='/assets/imgs/ingame/sunod.png' id='sunod-image' />
         </Link>
     </div></>
