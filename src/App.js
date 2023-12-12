@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import axios from 'axios';
 import Home from './pages/Home';
 import Home2 from './pages/Home2';
 import Home3 from './pages/Home3';
@@ -12,59 +13,70 @@ import Mabuhay from './pages/mabuhay';
 import Panuto from './pages/panuto';
 import Up1 from './pages/up1';
 import Question from './game/Question';
-import Answer from './game/Answer';
-
-const questionsData = [
-  {
-    question: 'Anong letra and kasunod ng "A"?',
-    answers: ['Ss', 'Cc', 'Bb', 'Dd'],
-    correctAnswer: 'Bb',
-  },
-  {
-    question: 'Piliin ang katunog ng unang letra ng larawan sa itaas',
-    answers: ['Ss', 'Ll', 'Kk', 'Pp'],
-    correctAnswer: 'Ll',
-  },
-  {
-    question: 'Piliin ang katunog ng unang letra ng larawan sa itaas',
-    answers: ['Ss', 'Ll', 'Mm', 'Pp'],
-    correctAnswer: 'Mm',
-  },
-  {
-    question: 'Ano ang salitang kasama ng salitang “Puno”',
-    answers: ['Araw', 'Dahon', 'Ulan'],
-    correctAnswer: 'Dahon',
-  },
-  {
-    question: 'Piliin ang bagay na kasing hugis ng larawan sa itaas',
-    answers: ['Pizza', 'Karton', 'Planeta'],
-    correctAnswer: 'Planeta',
-  },
-  // Add more questions similarly
-];
 
 
 const App = () => {
+  const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState('');
-  const [showNextQuestion, setShowNextQuestion] = useState(false);
+  const [userAnswers, setUserAnswers] = useState([]);
+  const [scores, setScores] = useState({
+    BEGINNER: 0,
+    EASY: 0,
+    INTERMEDIATE: 0,
+    CHALLENGING: 0,
+    ADVANCED: 0,
+  });
 
-  const handleAnswerSelection = (answer) => {
-    setSelectedAnswer(answer);
+  useEffect(() => {
+    // Fetch questions from Laravel API
+    axios.get('http://localhost:8000/api/questions').then((response) => {
+      setQuestions(response.data);
+    });
+  }, []);
 
-    // Automatically move to the next question after 1.5 seconds (1500 milliseconds)
-    setTimeout(() => {
-      setSelectedAnswer('');
-      setCurrentQuestion(currentQuestion + 1);
-    }, 500);
+  const handleAnswer = (selectedAnswer) => {
+    const isCorrect = selectedAnswer.is_correct === 1;
+    const difficulty = questions[currentQuestion].course.difficulty;
+
+    // Update user's answers
+    setUserAnswers((prevAnswers) => [...prevAnswers, { questionId: currentQuestion, isCorrect }]);
+
+    // Update scores based on difficulty and category
+    if (isCorrect) {
+      setScores((prevScores) => ({
+        ...prevScores,
+        [difficulty]: prevScores[difficulty] + getDifficultyScore(difficulty),
+      }));
+    }
+
+    // Move to the next question
+    setCurrentQuestion((prev) => prev + 1);
   };
 
-  const nextQuestion = () => {
-    setShowNextQuestion(false);
-    setSelectedAnswer('');
-    setCurrentQuestion(currentQuestion + 1);
+  const calculateResults = () => {
+    const totalScore = Object.values(scores).reduce((acc, score) => acc + score, 0);
+    return { totalScore, scores };
   };
 
+  const getDifficultyScore = (difficulty) => {
+    switch (difficulty) {
+      case 'BEGINNER':
+        return 2;
+      case 'EASY':
+        return 3;
+      case 'INTERMEDIATE':
+        return 4;
+      case 'CHALLENGING':
+        return 5;
+      case 'ADVANCED':
+        return 6; // Adjust this based on your actual scoring logic for ADVANCED
+      default:
+        return 0;
+    }
+  };
+
+  const results = calculateResults();
+  
   return (
     <Router>
       <div id="root">
@@ -81,17 +93,18 @@ const App = () => {
           <Route path="/panuto" element={<Panuto />} />
           <Route path="/mabuhay" element={<Mabuhay />} />
           <Route path="/up1" element={<Up1 />} />
-          <Route path="/quiz" element={
-            currentQuestion < questionsData.length ? (
-                <Question
-                  question={questionsData[currentQuestion].question}
-                  answers={questionsData[currentQuestion].answers}
-                  handleAnswerSelection={handleAnswerSelection}
-                />
-            ) : (
-              <p>Ang galing mo! na tapos mo ang unang pag-susulit!</p>
-            )} />
-        </Routes>
+          <Route path="/quiz" element={ currentQuestion < questions.length ? (
+  <Question question={questions[currentQuestion]}
+    handleAnswer={handleAnswer}  /> ) : (
+  <div>
+    <h2>Exam completed! Display results here</h2>
+    <p>PAG UNAWA SA NAPAKINGAN: {scores.BEGINNER}/20</p>
+    <p>PAG UNAWA SA BINASA: {scores.EASY}/20</p>
+    <p>PAGSUSURI SA BOKABULARYO: {scores.INTERMEDIATE}/20</p>
+    <p>WIKA AT GRAMATIKA: {scores.CHALLENGING}/20</p>
+    <p>Total Score: {results.totalScore}</p>
+  </div>)} />
+ </Routes>
       </div>
     </Router>
   );

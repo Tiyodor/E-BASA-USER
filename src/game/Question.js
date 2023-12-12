@@ -1,17 +1,20 @@
 import React from 'react';
 
-const Question = ({ question, answers, handleAnswerSelection }) => {
+const Question = ({ question, handleAnswer }) => {
   return (
-    <div class="panuto-carousel panuto">
+    <div className='panuto'>
+      <div className='blackboard'>
     <div>
-      <h2>{question}</h2>
       <ul>
-        {answers.map((answer, index) => (
-          <li key={index}>
-            <button onClick={() => handleAnswerSelection(answer)}>{answer}</button>
+        {question.answers.map((answer) => (
+          <li key={answer.id} onClick={() => handleAnswer(answer)}>
+            {answer.answer_text}
           </li>
         ))}
       </ul>
+      <h2>{question.question_text}</h2>
+
+      </div>
     </div>
     </div>
   );
